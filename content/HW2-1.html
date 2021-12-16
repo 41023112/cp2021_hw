@@ -2,6 +2,7 @@
         <head>
         <title>cp2021 homework site</title>
         <meta charset="utf-8">
+<meta property="head" content="H1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -138,51 +139,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='Exam.html'>Next</a> >> Exam<br /><h1>About</h1>
-<p>這是計算機程式課程 2021 Fall 的作業倉儲與網站 template</p>
-<hr/>
-<p>41023112</p>
-<p>網站倉儲:  <a href="https://github.com/41023112/cp2021_hw">https://github.com/41023112/cp2021_hw</a> </p>
-<p>網站連結: <span> </span><a href="https://41023112.github.io/cp2021_hw/">https://41023112.github.io/cp2021_hw/</a></p>
-<p>其他與個人或作業相關資料說明或介紹</p>
-<!-- 導入 brython 程式庫 -->
-<p></p>
-<script src="./../cmsimde/static/brython.js"></script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){
-    brython();
-}
-</script>
-<!-- 頁面載入後執行 brythonListener() -->
-<script>
-$(document).ready( function() {
-    brythonListener();
-});
-</script>
-<!-- 建立讓 Javascript 執行的 brython 程式 -->
-<script type="text/python">
-from browser import document
-from browser import window
-
-def run():
-    prog = open(document.query["src"]).read()
-    ns = {'__name__':'__main__'}
-    exec(prog, ns)
-
-# 透過 window 將 Brython 的 run() 函式與 Javascript 的  brythonListner 函式對應
-window.brythonListener = run()
-</script>
-<!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 -->
-<div id="brython_div"></div>
-<!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
-<script src="https://mde.tw/cp2021/cmsimde/static/Cango-24v03-min.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/gearUtils-09.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
-<br /> <a href='Exam.html'>Next</a> >> Exam</div>
+    <div id="tipue_search_content">w13 << <a href='w13.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1<br /><h1>HW2-1</h1><br />w13 << <a href='w13.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1</div>
         
     <!-- footer -->
       <div class="container">
