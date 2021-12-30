@@ -42,6 +42,136 @@ window.brythonListener = run()
 <script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
+<h1>HW1</h1>
+<p>HW1 - 網際動畫與 touch typing 佔學期成績 20%.</p>
+<p><span style="background-color: #ffff99;">HW1 必須在 2021.10.20 22:00 之前完成</span>.</p>
+<p><a href="https://github.com/mdecourse/cp2021/discussions/8">HW1 具體項目成果回報區</a>將於 2021.09.23 開啟, 於 <span style="background-color: #ff99cc;">2021.10.20 22:00 關閉</span></p>
+<ol>
+<li>請至 <a href="https://github.com">https://github.com</a> 申請 Github 帳號後, 至 <a href="https://mde.tw/cp2021/content/Task1.html">https://mde.tw/cp2021/content/Task1.html</a>  頁面, 將左右碰撞移動的紅色方塊, 改為先移動到水平畫面中心點位置後, 接著上下碰撞移動.</li>
+<li>請將 1. 的程式碼存入個人 Gist 區 (<a href="https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists">說明</a>).</li>
+<li>請在 1. 的程式中, 加入與 <a href="https://mde.tw/cp2021/content/Cango.html">Cango 頁面</a> Fourbar 程式碼相同功能的啟動按鈕, 讓使用者可以利用按鈕啟動或中斷紅色方塊上下碰撞移動. 完成後請將程式碼存入個人 Gist 區.</li>
+<li>請在 Gist 檔案編輯區, 利用鍵盤輸入 <a href="https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists#about-gists">https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists#about-gists</a> 中的這段英文內容, 請利用手機計時, 大概需要多少時間? 請將此段練習打字的內容與所需時間存入 Gist 檔案中.</li>
+<li>請至少練習 key in 這段英文內容三次, 然後看看是否已經了解如何透過電腦鍵盤 touch typing?</li>
+<li>接下來請利用中文輸入 <a href="https://ithelp.ithome.com.tw/articles/10206233">https://ithelp.ithome.com.tw/articles/10206233</a> 的第一段中文說明, 請利用手機計時, 大概需要多少時間?</li>
+</ol>
+<p>      </p>
+<p>1. <span>hw1-1程式碼:<a href="https://gist.githubusercontent.com/41023112/bcf7784373b3a6111b5686a41bbef4a0/raw/ac4743883ff7211f145ab8435fb1054ab6795fa8/gistfile1.txt">https://gist.githubusercontent.com/41023112/bcf7784373b3a6111b5686a41bbef4a0/raw/ac4743883ff7211f145ab8435fb1054ab6795fa8/gistfile1.txt</a></span></p>
+<p>2.hw1-2 程式碼:<a href="https://gist.githubusercontent.com/41023112/6fb0cca71f3153b7b26d7196adcb2ffb/raw/f153a8784988ae06caf62f9403e1feae7280235b/gistfile1.txt">https://gist.githubusercontent.com/41023112/6fb0cca71f3153b7b26d7196adcb2ffb/raw/f153a8784988ae06caf62f9403e1feae7280235b/gistfile1.txt</a> </p>
+<p>3.英文打字:<a href="https://gist.githubusercontent.com/41023112/961d24a26a1e4d1c1bbc22e80f6f257e/raw/4f97f0a9bc4c10846b5ebaeb5e9a1076f6a8180f/gistfile1.txt">https://gist.githubusercontent.com/41023112/961d24a26a1e4d1c1bbc22e80f6f257e/raw/4f97f0a9bc4c10846b5ebaeb5e9a1076f6a8180f/gistfile1.txt</a> </p>
+<p>4.中文打字:<a href="https://gist.githubusercontent.com/41023112/582c67adb84e4f78d88d9f4d3f930041/raw/fc5317a83a06e7146b8964cd740b9a5cee18ad7d/gistfile1.txt">https://gist.githubusercontent.com/41023112/582c67adb84e4f78d88d9f4d3f930041/raw/fc5317a83a06e7146b8964cd740b9a5cee18ad7d/gistfile1.txt</a> </p>
+<h2>run</h2>
+<!-- 導入 brython 程式庫 -->
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+}
+</script>
+<p><!-- 導入 FileSaver 與 filereader --></p>
+<p>
+<script src="/static/ace/FileSaver.min.js" type="text/javascript"></script>
+<script src="/static/ace/filereader.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 ace --></p>
+<p>
+<script src="/static/ace/ace.js" type="text/javascript"></script>
+<script src="/static/ace/ext-language_tools.js" type="text/javascript"></script>
+<script src="/static/ace/mode-python3.js" type="text/javascript"></script>
+<script src="/static/ace/snippets/python.js" type="text/javascript"></script>
+</p>
+<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
+<p>
+<script type="text/javascript">
+function doSave(storage_id, filename){
+    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
+    filename = document.getElementById(filename).value
+    saveAs(blob, filename+".py");
+}
+</script>
+</p>
+<p><!-- 印出版次與關鍵字程式 --></p>
+<p>
+<script type="text/python3">
+from browser import document as doc
+import ace
+# 清除畫布
+def clear_bd(ev):
+    bd = doc["brython_div"]
+    bd.clear()
+# Brython 3.3.4 內建的 container 名稱為  'container' 且 turtle 輸出為 svg 必須使用 div 訂定 id
+Ace = ace.Editor(editor_id="kw_editor", console_id="kw_console", container_id="kw__container", storage_id="kw_py_src" )
+# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
+def run():
+    # 利用 get 取下 src 變數值
+    try:
+        url = doc.query["src"]
+    except:
+        url = "https://gist.githubusercontent.com/mdecourse/e896a4705a95ac8cc4147b355b0e87ef/raw/8954b8280c524c5781dc3c0b3565bc489d3aa3a3/cango_gear1.py"
+    prog = open(url).read()
+
+    # 將程式載入編輯區
+    Ace.editor.setValue(prog)
+    Ace.editor.scrollToRow(0)
+    Ace.editor.gotoLine(0)
+    # 直接執行程式
+    #ns = {'__name__':'__main__'}
+    #exec(prog, ns)
+    # 按下 run 按鈕
+    Ace.run()
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run'].bind('click', Ace.run)
+doc['kw_show_console'].bind('click', Ace.show_console)
+doc['kw_clear_console'].bind('click', Ace.clear_console)
+doc['clear_bd'].bind('click', clear_bd)
+# 呼叫函式執行
+run()
+</script>
+</p>
+<p><!-- 用來顯示程式碼的 editor 區域 --></p>
+<div id="kw_editor" style="width: 600px; height: 300px;"></div>
+<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
+<!-- 存擋表單開始 --><form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src', 'kw_filename');" type="submit" value="Save"/></form><!-- 存擋表單結束 -->
+<p></p>
+<!-- 執行與清除按鈕開始 -->
+<p><button id="kw_run">Run</button> <button id="kw_show_console">Output</button> <button id="kw_clear_console">清除輸出區</button><button id="clear_bd">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<!-- 執行與清除按鈕結束 -->
+<p></p>
+<!-- 程式執行 ouput 區 -->
+<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console"></textarea></div>
+<!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 -->
+<div id="brython_div"></div>
+<!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
+<script src="https://mde.tw/cp2021/cmsimde/static/Cango-24v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/gearUtils-09.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
+<h3>runsrc</h3>
+<h1>HW2</h1>
+<p><strong><em>HW2 - 可攜程式系統與個人網站佔學期成績 20%.</em></strong></p>
+<p><strong><em><span style="background-color: #ffff99;">HW2 必須在 2021.11.03 22:00 之前完成.</span></em></strong></p>
+<p><strong><em><a href="https://github.com/mdecourse/cp2021/discussions/9">HW2 具體項目成果回報區</a>將於 2021.10.25 開啟, 於 <span style="background-color: #ff99cc;">2021.11.03 22:00 關閉</span></em></strong></p>
+<p><strong><em>可攜程式系統與 Python 範例程式收集整理</em></strong></p>
+<p><strong><em>1. 請準備一個至少 64 GB 大小的 USB 3.0 以上隨身碟 (或外接 SSD), 根據 <a href="https://mde.tw/cp2021/content/Task2.html">Task2</a> 中的說明, 建立自己的可攜程式系統. </em></strong></p>
+<p><strong><em>2. 請登入 Github 帳號後, 連線至 <a href="https://github.com/mdecourse/cp2021_hw">https://github.com/mdecourse/cp2021_hw</a> 後, 透過 <span style="background-color: #00ff00;">Use this template</span> 按鈕建立自己的 cp2021_hw 倉儲. 並至該倉儲的 Settings -&gt; Pages -&gt; Source 將 main 分支設為 Github Pages 的 root (也就是選擇將倉儲的 main 分支設為對應網站的根目錄).</em></strong></p>
+<p><strong><em>3. 請將 HW1 與 HW2 的作業內容登錄至個人的 cp2021_hw 倉儲與網站中. (學習如何透過 git 指令修改倉儲中的版本內容)</em></strong></p>
+<p><strong><em>4. 請在個人作業網站的 HW2 區域下增設一個 H2 頁面, 將該網頁標題命名為 run, 可以如 <a href="https://mde.tw/cp2021/content/run.html">run</a> 頁面中的內容, 並且利用此頁面收集 Python 範例程式. (例如: 可自動執行的貪食蛇: <a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/d306a1f57e53bfd6466eaae20bcb9439/raw/2160a12b9fec9707a120a383ed5d38b9b78a02cf/snake.py">https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/d306a1f57e53bfd6466eaae20bcb9439/raw/2160a12b9fec9707a120a383ed5d38b9b78a02cf/snake.py</a> 將 <a href="https://gist.github.com/mdecourse/d306a1f57e53bfd6466eaae20bcb9439">https://gist.github.com/mdecourse/d306a1f57e53bfd6466eaae20bcb9439</a> 作為 <a href="https://mde.tw/cp2021/content/run.html">https://mde.tw/cp2021/content/run.html</a> 頁面中 src 變數的值, 就可以在頁面中導入程式碼並執行)</em></strong></p>
+<h2>建立倉儲說明</h2>
+<p>1.建立<span>GitHub帳號並登錄</span></p>
+<p><span>2.找到老師的作業網站倉儲<a href="https://github.com/mdecourse/cp2021_hw">https://github.com/mdecourse/cp2021_hw</a></span></p>
+<p><span>點擊Use this template 並在Repository name欄輸入cp2021_hw</span></p>
+<p><span>3.打開小黑窗/打 cd tmp 到 tmp 資料夾/輸入指令 </span>git clone --recurse-submodules (你的倉儲網址+.git)</p>
+<p>  /再輸入指令 <span>pip install pyopenssl 新增模組</span></p>
+<p><span>4.最後輸入 cms 開啟動態網站</span></p>
+<p><span>5.跑完出現9448即可完成 </span></p>
+<p><span>6.利用小黑窗上的網址打開自己的倉儲</span></p>
+<h2>Problem</h2>
+<p>一開始因為要把克隆遠端github倉儲時，克隆錯網址導致推不上遠端</p>
+<p>後來問了同學才知道<span>克隆遠端github倉儲時</span>要打自己的倉儲網址</p>
+<p><span style="color: #ff0000;"><strong> </strong></span></p>
 <h1>Exam</h1>
 <h2>w13</h2>
 <p><a href="/downloads/w12.txt">w12.txt</a></p>
@@ -187,134 +317,7 @@ w13 = button2(w13_url)
 doc["w13"].bind('click', w13.do)
 ################################## w13 end
 </script>
-</p><h1>HW1</h1>
-<p>HW1 - 網際動畫與 touch typing 佔學期成績 20%.</p>
-<p><span style="background-color: #ffff99;">HW1 必須在 2021.10.20 22:00 之前完成</span>.</p>
-<p><a href="https://github.com/mdecourse/cp2021/discussions/8">HW1 具體項目成果回報區</a>將於 2021.09.23 開啟, 於 <span style="background-color: #ff99cc;">2021.10.20 22:00 關閉</span></p>
-<ol>
-<li>請至 <a href="https://github.com">https://github.com</a> 申請 Github 帳號後, 至 <a href="https://mde.tw/cp2021/content/Task1.html">https://mde.tw/cp2021/content/Task1.html</a>  頁面, 將左右碰撞移動的紅色方塊, 改為先移動到水平畫面中心點位置後, 接著上下碰撞移動.</li>
-<li>請將 1. 的程式碼存入個人 Gist 區 (<a href="https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists">說明</a>).</li>
-<li>請在 1. 的程式中, 加入與 <a href="https://mde.tw/cp2021/content/Cango.html">Cango 頁面</a> Fourbar 程式碼相同功能的啟動按鈕, 讓使用者可以利用按鈕啟動或中斷紅色方塊上下碰撞移動. 完成後請將程式碼存入個人 Gist 區.</li>
-<li>請在 Gist 檔案編輯區, 利用鍵盤輸入 <a href="https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists#about-gists">https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists#about-gists</a> 中的這段英文內容, 請利用手機計時, 大概需要多少時間? 請將此段練習打字的內容與所需時間存入 Gist 檔案中.</li>
-<li>請至少練習 key in 這段英文內容三次, 然後看看是否已經了解如何透過電腦鍵盤 touch typing?</li>
-<li>接下來請利用中文輸入 <a href="https://ithelp.ithome.com.tw/articles/10206233">https://ithelp.ithome.com.tw/articles/10206233</a> 的第一段中文說明, 請利用手機計時, 大概需要多少時間?</li>
-</ol>
-<p>      </p>
-<p>1. <span>hw1-1程式碼:<a href="https://gist.githubusercontent.com/41023112/bcf7784373b3a6111b5686a41bbef4a0/raw/ac4743883ff7211f145ab8435fb1054ab6795fa8/gistfile1.txt">https://gist.githubusercontent.com/41023112/bcf7784373b3a6111b5686a41bbef4a0/raw/ac4743883ff7211f145ab8435fb1054ab6795fa8/gistfile1.txt</a></span></p>
-<p>2.hw1-2 程式碼:<a href="https://gist.githubusercontent.com/41023112/6fb0cca71f3153b7b26d7196adcb2ffb/raw/f153a8784988ae06caf62f9403e1feae7280235b/gistfile1.txt">https://gist.githubusercontent.com/41023112/6fb0cca71f3153b7b26d7196adcb2ffb/raw/f153a8784988ae06caf62f9403e1feae7280235b/gistfile1.txt</a> </p>
-<p>3.英文打字:<a href="https://gist.githubusercontent.com/41023112/961d24a26a1e4d1c1bbc22e80f6f257e/raw/4f97f0a9bc4c10846b5ebaeb5e9a1076f6a8180f/gistfile1.txt">https://gist.githubusercontent.com/41023112/961d24a26a1e4d1c1bbc22e80f6f257e/raw/4f97f0a9bc4c10846b5ebaeb5e9a1076f6a8180f/gistfile1.txt</a> </p>
-<p>4.中文打字:<a href="https://gist.githubusercontent.com/41023112/582c67adb84e4f78d88d9f4d3f930041/raw/fc5317a83a06e7146b8964cd740b9a5cee18ad7d/gistfile1.txt">https://gist.githubusercontent.com/41023112/582c67adb84e4f78d88d9f4d3f930041/raw/fc5317a83a06e7146b8964cd740b9a5cee18ad7d/gistfile1.txt</a> </p>
-<h2>run</h2>
-<!-- 導入 brython 程式庫 -->
-<script src="/static/brython.js"></script>
-<script src="/static/brython_stdlib.js"></script>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
-}
-</script>
-<p><!-- 導入 FileSaver 與 filereader --></p>
-<p>
-<script src="/static/ace/FileSaver.min.js" type="text/javascript"></script>
-<script src="/static/ace/filereader.js" type="text/javascript"></script>
-</p>
-<p><!-- 導入 ace --></p>
-<p>
-<script src="/static/ace/ace.js" type="text/javascript"></script>
-<script src="/static/ace/ext-language_tools.js" type="text/javascript"></script>
-<script src="/static/ace/mode-python3.js" type="text/javascript"></script>
-<script src="/static/ace/snippets/python.js" type="text/javascript"></script>
-</p>
-<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
-<p>
-<script type="text/javascript">
-function doSave(storage_id, filename){
-    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
-    filename = document.getElementById(filename).value
-    saveAs(blob, filename+".py");
-}
-</script>
-</p>
-<p><!-- 印出版次與關鍵字程式 --></p>
-<p>
-<script type="text/python3">
-from browser import document as doc
-import ace
-# 清除畫布
-def clear_bd(ev):
-    bd = doc["brython_div"]
-    bd.clear()
-# Brython 3.3.4 內建的 container 名稱為  'container' 且 turtle 輸出為 svg 必須使用 div 訂定 id
-Ace = ace.Editor(editor_id="kw_editor", console_id="kw_console", container_id="kw__container", storage_id="kw_py_src" )
-# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
-def run():
-    # 利用 get 取下 src 變數值
-    try:
-        url = doc.query["src"]
-    except:
-        url = "https://gist.githubusercontent.com/mdecourse/e896a4705a95ac8cc4147b355b0e87ef/raw/8954b8280c524c5781dc3c0b3565bc489d3aa3a3/cango_gear1.py"
-    prog = open(url).read()
-
-    # 將程式載入編輯區
-    Ace.editor.setValue(prog)
-    Ace.editor.scrollToRow(0)
-    Ace.editor.gotoLine(0)
-    # 直接執行程式
-    #ns = {'__name__':'__main__'}
-    #exec(prog, ns)
-    # 按下 run 按鈕
-    Ace.run()
-
-# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
-doc['kw_run'].bind('click', Ace.run)
-doc['kw_show_console'].bind('click', Ace.show_console)
-doc['kw_clear_console'].bind('click', Ace.clear_console)
-doc['clear_bd'].bind('click', clear_bd)
-# 呼叫函式執行
-run()
-</script>
-</p>
-<p><!-- 用來顯示程式碼的 editor 區域 --></p>
-<div id="kw_editor" style="width: 600px; height: 300px;"></div>
-<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
-<!-- 存擋表單開始 --><form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src', 'kw_filename');" type="submit" value="Save"/></form><!-- 存擋表單結束 -->
-<p></p>
-<!-- 執行與清除按鈕開始 -->
-<p><button id="kw_run">Run</button> <button id="kw_show_console">Output</button> <button id="kw_clear_console">清除輸出區</button><button id="clear_bd">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
-<!-- 執行與清除按鈕結束 -->
-<p></p>
-<!-- 程式執行 ouput 區 -->
-<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console"></textarea></div>
-<!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 -->
-<div id="brython_div"></div>
-<!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
-<script src="https://mde.tw/cp2021/cmsimde/static/Cango-24v03-min.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/gearUtils-09.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script><h1>HW2</h1>
-<p><strong><em>HW2 - 可攜程式系統與個人網站佔學期成績 20%.</em></strong></p>
-<p><strong><em><span style="background-color: #ffff99;">HW2 必須在 2021.11.03 22:00 之前完成.</span></em></strong></p>
-<p><strong><em><a href="https://github.com/mdecourse/cp2021/discussions/9">HW2 具體項目成果回報區</a>將於 2021.10.25 開啟, 於 <span style="background-color: #ff99cc;">2021.11.03 22:00 關閉</span></em></strong></p>
-<p><strong><em>可攜程式系統與 Python 範例程式收集整理</em></strong></p>
-<p><strong><em>1. 請準備一個至少 64 GB 大小的 USB 3.0 以上隨身碟 (或外接 SSD), 根據 <a href="https://mde.tw/cp2021/content/Task2.html">Task2</a> 中的說明, 建立自己的可攜程式系統. </em></strong></p>
-<p><strong><em>2. 請登入 Github 帳號後, 連線至 <a href="https://github.com/mdecourse/cp2021_hw">https://github.com/mdecourse/cp2021_hw</a> 後, 透過 <span style="background-color: #00ff00;">Use this template</span> 按鈕建立自己的 cp2021_hw 倉儲. 並至該倉儲的 Settings -&gt; Pages -&gt; Source 將 main 分支設為 Github Pages 的 root (也就是選擇將倉儲的 main 分支設為對應網站的根目錄).</em></strong></p>
-<p><strong><em>3. 請將 HW1 與 HW2 的作業內容登錄至個人的 cp2021_hw 倉儲與網站中. (學習如何透過 git 指令修改倉儲中的版本內容)</em></strong></p>
-<p><strong><em>4. 請在個人作業網站的 HW2 區域下增設一個 H2 頁面, 將該網頁標題命名為 run, 可以如 <a href="https://mde.tw/cp2021/content/run.html">run</a> 頁面中的內容, 並且利用此頁面收集 Python 範例程式. (例如: 可自動執行的貪食蛇: <a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/d306a1f57e53bfd6466eaae20bcb9439/raw/2160a12b9fec9707a120a383ed5d38b9b78a02cf/snake.py">https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/d306a1f57e53bfd6466eaae20bcb9439/raw/2160a12b9fec9707a120a383ed5d38b9b78a02cf/snake.py</a> 將 <a href="https://gist.github.com/mdecourse/d306a1f57e53bfd6466eaae20bcb9439">https://gist.github.com/mdecourse/d306a1f57e53bfd6466eaae20bcb9439</a> 作為 <a href="https://mde.tw/cp2021/content/run.html">https://mde.tw/cp2021/content/run.html</a> 頁面中 src 變數的值, 就可以在頁面中導入程式碼並執行)</em></strong></p>
-<h2>建立倉儲說明</h2>
-<p>1.建立<span>GitHub帳號並登錄</span></p>
-<p><span>2.找到老師的作業網站倉儲<a href="https://github.com/mdecourse/cp2021_hw">https://github.com/mdecourse/cp2021_hw</a></span></p>
-<p><span>點擊Use this template 並在Repository name欄輸入cp2021_hw</span></p>
-<p><span>3.打開小黑窗/打 cd tmp 到 tmp 資料夾/輸入指令 </span>git clone --recurse-submodules (你的倉儲網址+.git)</p>
-<p>  /再輸入指令 <span>pip install pyopenssl 新增模組</span></p>
-<p><span>4.最後輸入 cms 開啟動態網站</span></p>
-<p><span>5.跑完出現9448即可完成 </span></p>
-<p><span>6.利用小黑窗上的網址打開自己的倉儲</span></p>
-<h2>Problem</h2>
-<p>一開始因為要把克隆遠端github倉儲時，克隆錯網址導致推不上遠端</p>
-<p>後來問了同學才知道<span>克隆遠端github倉儲時</span>要打自己的倉儲網址</p>
-<p><span style="color: #ff0000;"><strong> </strong></span></p><h1>HW3</h1>
+</p><h1>HW3</h1>
 <p></p>
 <p>HW3 - AI 貪食蛇佔學期成績 30%.</p>
 <p><span style="background-color: #ffff99;">HW3 必須在 2021.12.22 22:00 之前完成.</span></p>
@@ -564,7 +567,9 @@ check_input()
 <p style="padding-left: 30px;"><a href="https://zerojudge.tw/">https://zerojudge.tw/</a></p>
 <p style="padding-left: 30px;"><a href="https://shaform.com/csdream/docs/problem-solving/">https://shaform.com/csdream/docs/problem-solving/</a></p>
 <p style="padding-left: 30px;"><a href="https://onlinejudge.org/">https://onlinejudge.org/</a></p>
-<p style="padding-left: 30px;"></p><h1>Final Project</h1>
+<p style="padding-left: 30px;"></p>
+<h1>BSnake</h1>
+<h1>Final Project</h1>
 <p>Final Project 佔學期成績 30%</p>
 <p><span style="background-color: #ffff99;">Final Project 必須在 2022.01.05 22:00 之前完成</span>.</p>
 <p><a href="https://github.com/mdecourse/cp2021/discussions/11">Final Project 具體項目成果回報區</a>將於 2021.11.09 開啟, 於 <span style="background-color: #ff99cc;">2022.01.05 22:00 關閉</span></p>
