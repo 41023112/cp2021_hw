@@ -7,24 +7,24 @@
 <p>其他與個人或作業相關資料說明或介紹</p>
 <h2>Git 指令</h2>
 <!-- 導入 brython 程式庫 -->
-<p><span>1.git init = 建立新的本地端 Repository</span></p>
-<p><span>2.git clone [Repository URL] = 複製遠端的 Repository 檔案到本地端</span></p>
-<p><span>3.git status = 檢查本地端檔案異動狀態</span></p>
-<p><span>4.git add [檔案或資料夾] = 將指定的檔案（或資料夾）加入版本控制。用 <code class="highlighter-rouge">git add .</code><span><span> </span>可加入全部</span></span></p>
-<p><span>5.git commit = 提交（commit）目前的異動</span></p>
-<p><span>6.git commit -m "提交說明內容" = 提交（commit）目前的異動並透過 <code class="highlighter-rouge">-m</code><span><span> </span>參數設定摘要說明文字</span></span></p>
-<p><span>7.git stash = 獲取目前工作目錄的 dirty state，並保存到一個未完成變更的 stack，以方便隨時回復至當初的 state</span></p>
-<p><span>8.git log = 查看先前的 commit 記錄</span></p>
-<p><span>9.git push = 將本地端 Repository 的 commit 發佈到遠端</span></p>
-<p><span>10.git push origin [BRANCH_NAME] = 發佈至遠端指定的分支（Branch）</span></p>
-<p><span>11.git branch = 查看分支</span></p>
-<p><span>12.git branch [BRANCH_NAME] = 建立分支</span></p>
-<p><span>13.git checkout [BRANCH_NAME] = 取出指定的分支</span></p>
-<p><span>14.git checkout -b [BRANCH_NAME] = 建立並跳到該分支</span></p>
-<p><span>15.git branch -D [BRANCH_NAME] = 強制刪除指定分支（須先切換至其他分支再做刪除）</span></p>
-<p><span>16.git reset --hard [HASH] = 強制恢復到指定的 commit（透過 Hash 值）</span></p>
-<p><span>17.git checkout [HASH] = 切換到指定的 commit（與 <code class="highlighter-rouge">git checkout [BRANCH_NAME]</code><span><span> </span>相同)</span></span></p>
-<p><span>18.git branch -m &lt;OLD_BRANCH_NAME&gt; &lt;NEW_BRANCH_NAME&gt; = 修改分支名稱</span></p>
+<p><span>1.<strong>git init</strong> = 建立新的本地端 Repository</span></p>
+<p><span>2.<strong>git clone</strong> [Repository URL] = 複製遠端的 Repository 檔案到本地端</span></p>
+<p><span>3.<strong>git status</strong> = 檢查本地端檔案異動狀態</span></p>
+<p><span>4.<strong>git add</strong> [檔案或資料夾] = 將指定的檔案（或資料夾）加入版本控制。用 <code class="highlighter-rouge">git add .</code><span><span> </span>可加入全部</span></span></p>
+<p><span>5.<strong>git commit</strong> = 提交（commit）目前的異動</span></p>
+<p><span>6.<strong>git commit -m</strong> "提交說明內容" = 提交（commit）目前的異動並透過 <code class="highlighter-rouge">-m</code><span><span> </span>參數設定摘要說明文字</span></span></p>
+<p><span>7.<strong>git stash</strong> = 獲取目前工作目錄的 dirty state，並保存到一個未完成變更的 stack，以方便隨時回復至當初的 state</span></p>
+<p><span>8.<strong>git log</strong> = 查看先前的 commit 記錄</span></p>
+<p><span>9.<strong>git push</strong> = 將本地端 Repository 的 commit 發佈到遠端</span></p>
+<p><span>10.<strong>git push origin</strong> [BRANCH_NAME] = 發佈至遠端指定的分支（Branch）</span></p>
+<p><span>11.<strong>git branch</strong> = 查看分支</span></p>
+<p><span>12.<strong>git branch</strong> [BRANCH_NAME] = 建立分支</span></p>
+<p><span>13.<strong>git checkout</strong> [BRANCH_NAME] = 取出指定的分支</span></p>
+<p><span>14.<strong>git checkout -b</strong> [BRANCH_NAME] = 建立並跳到該分支</span></p>
+<p><span>15.<strong>git branch -D</strong> [BRANCH_NAME] = 強制刪除指定分支（須先切換至其他分支再做刪除）</span></p>
+<p><span>16.<strong>git reset --hard</strong> [HASH] = 強制恢復到指定的 commit（透過 Hash 值）</span></p>
+<p><span>17.<strong>git checkout</strong> [HASH] = 切換到指定的 commit（與 <code class="highlighter-rouge">git checkout [BRANCH_NAME]</code><span><span> </span>相同)</span></span></p>
+<p><span>18.<strong>git branch -m</strong> &lt;OLD_BRANCH_NAME&gt; &lt;NEW_BRANCH_NAME&gt; = 修改分支名稱</span></p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
 <!-- 啟動 Brython -->

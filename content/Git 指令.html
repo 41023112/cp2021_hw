@@ -2,7 +2,7 @@
         <head>
         <title>cp2021 homework site</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -139,27 +139,61 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">final << <a href='final.html'>Previous</a> <br /><h1>Final Project</h1>
-<p>Final Project 佔學期成績 30%</p>
-<p><span style="background-color: #ffff99;">Final Project 必須在 2022.01.05 22:00 之前完成</span>.</p>
-<p><a href="https://github.com/mdecourse/cp2021/discussions/11">Final Project 具體項目成果回報區</a>將於 2021.11.09 開啟, 於 <span style="background-color: #ff99cc;">2022.01.05 22:00 關閉</span></p>
-<p>利用 Brython 寫一個會<span style="background-color: #ffff99;">令人想玩</span>的網際遊戲.</p>
-<h4>參考章節:</h4>
-<ol>
-<li><a href="https://www.enago.tw/academy/%E5%A6%82%E4%BD%95%E6%92%B0%E5%AF%AB%E6%91%98%E8%A6%81%EF%BC%9F/">專題摘要</a></li>
-<li><a href="https://ctld.ntu.edu.tw/ls/strategy/lecture.php?index=126">資料蒐集</a></li>
-<li><a href="http://old.gst.org.tw/WPES/guideline_D-a.htm">設計動機</a></li>
-<li><a href="https://wordvice.com.tw/%E5%A6%82%E4%BD%95%E5%AF%AB%E5%A5%BD%E8%AB%96%E6%96%87%E4%B8%AD%E7%9A%84%E3%80%8C%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E3%80%8D/">設計方法</a></li>
-<li><a href="http://microbiology.scu.edu.tw/MIB/wong/courses/writing/result02.htm">結果與討論</a></li>
-<li><a href="https://www.enago.tw/academy/what-you-need-to-know-about-the-manuscript-appendix/">附錄</a></li>
-</ol>
-<h4>參考資料:</h4>
-<p style="padding-left: 30px;"><a href="https://github.com/collections/web-games">https://github.com/collections/web-games</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/topics/web-game">https://github.com/topics/web-game</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/topics/browser-game">https://github.com/topics/browser-game</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/leereilly/games">https://github.com/leereilly/games</a></p>
-<p style="padding-left: 30px;"><a href="https://bmsleight.github.io/brython-blocks/">https://bmsleight.github.io/brython-blocks/</a></p>
-<p style="padding-left: 60px;"><a href="https://github.com/mdecourse/brython-blocks">https://github.com/mdecourse/brython-blocks</a></p><br />final << <a href='final.html'>Previous</a> </div>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1<br /><h1>Git 指令</h1>
+<!-- 導入 brython 程式庫 -->
+<p><span>1.<strong>git init</strong> = 建立新的本地端 Repository</span></p>
+<p><span>2.<strong>git clone</strong> [Repository URL] = 複製遠端的 Repository 檔案到本地端</span></p>
+<p><span>3.<strong>git status</strong> = 檢查本地端檔案異動狀態</span></p>
+<p><span>4.<strong>git add</strong> [檔案或資料夾] = 將指定的檔案（或資料夾）加入版本控制。用 <code class="highlighter-rouge">git add .</code><span><span> </span>可加入全部</span></span></p>
+<p><span>5.<strong>git commit</strong> = 提交（commit）目前的異動</span></p>
+<p><span>6.<strong>git commit -m</strong> "提交說明內容" = 提交（commit）目前的異動並透過 <span style="color: #000000;"><code class="highlighter-rouge">-m</code></span><span><span style="color: #000000;"> </span>參數設定摘要說明文字</span></span></p>
+<p><span>7.<strong>git stash</strong> = 獲取目前工作目錄的 dirty state，並保存到一個未完成變更的 stack，以方便隨時回復至當初的 state</span></p>
+<p><span>8.<strong>git log</strong> = 查看先前的 commit 記錄</span></p>
+<p><span>9.<strong>git push</strong> = 將本地端 Repository 的 commit 發佈到遠端</span></p>
+<p><span>10.<strong>git push origin</strong> [BRANCH_NAME] = 發佈至遠端指定的分支（Branch）</span></p>
+<p><span>11.<strong>git branch</strong> = 查看分支</span></p>
+<p><span>12.<strong>git branch</strong> [BRANCH_NAME] = 建立分支</span></p>
+<p><span>13.<strong>git checkout</strong> [BRANCH_NAME] = 取出指定的分支</span></p>
+<p><span>14.<strong>git checkout -b</strong> [BRANCH_NAME] = 建立並跳到該分支</span></p>
+<p><span>15.<strong>git branch -D</strong> [BRANCH_NAME] = 強制刪除指定分支（須先切換至其他分支再做刪除）</span></p>
+<p><span>16.<strong>git reset --hard</strong> [HASH] = 強制恢復到指定的 commit（透過 Hash 值）</span></p>
+<p><span>17.<strong>git checkout</strong> [HASH] = 切換到指定的 commit（與 <code class="highlighter-rouge">git checkout [BRANCH_NAME]</code><span><span> </span>相同)</span></span></p>
+<p><span>18.<strong>git branch -m</strong> &lt;OLD_BRANCH_NAME&gt; &lt;NEW_BRANCH_NAME&gt; = 修改分支名稱</span></p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<script>
+window.onload=function(){
+    brython();
+}
+</script>
+<!-- 頁面載入後執行 brythonListener() -->
+<script>
+$(document).ready( function() {
+    brythonListener();
+});
+</script>
+<!-- 建立讓 Javascript 執行的 brython 程式 -->
+<script type="text/python">
+from browser import document
+from browser import window
+
+def run():
+    prog = open(document.query["src"]).read()
+    ns = {'__name__':'__main__'}
+    exec(prog, ns)
+
+# 透過 window 將 Brython 的 run() 函式與 Javascript 的  brythonListner 函式對應
+window.brythonListener = run()
+</script>
+<!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 -->
+<div id="brython_div"></div>
+<!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
+<script src="https://mde.tw/cp2021/cmsimde/static/Cango-24v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/gearUtils-09.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script><br />About << <a href='About.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1</div>
         
     <!-- footer -->
       <div class="container">
